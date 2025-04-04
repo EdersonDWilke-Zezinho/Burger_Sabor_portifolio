@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <a href="#banner">
+                <li>inicio</li>
+            </a>
+            <a href="#cardapio">
+                <li>Cardápio</li>
+            </a>
+            <a href="#sobre">
+                <li>sobre</li>
+            </a>
+            <a href="#contato">
+                <li>contato</li>
+            </a>
+
+        </ul>
+    </nav>
+    <section class="banner">
+        <div class="banner-conteiner">
+            <div class="banner-img">
+                <img src="img/hamburguer.jpg" alt=" um delicioso hamburguer">
+            </div>
+            <div class="banner-titulo">
+                <h1>Mega Big Burguer</h1>
+            </div>
+            <div class="banner-texto">
+                <p>O melhor hambúrguer artesanal da cidade!</p>
+            </div>
+            <div class="banner-price">
+                <h2>R$ 29,90</h2>
+            </div>
+            <div class="banner-button">
+                <input type="button" value="Fazer pedido">
+            </div>
+        </div>
+    </section>
+    <nav>
+        <ul>
+            <li onclick="filtro_humburges()">hamburges</li>
+            <li onclick="filtro_bebidas()">bebidas</li>
+            <li onclick="filtro_sobremesas()">sobremesas</li>
+            <li onclick="filtro_combos()">combos</li>
+            <li onclick="filtro_ofertas()">oferta do Dia</li>
+        </ul>
+    </nav>
+    <section class="cardapio">
+        <div class="cardapio-data">cardapio-data</div>
+        <h1 class="cardapio-titulo">Cardápio</h1>
+        <div class="cardapio-conteiner">
+            <div class="cardapio-item">
+                <img src="img/hamburguer.jpg" alt=" um delicioso hamburguer">
+                <h2 class="cardapio-item-titulo">Hambúrguer</h2>
+                <p class="cardapio-item-descricao">Delicioso hambúrguer artesanal com queijo, alface, tomate e molho
+                    especial.</p>
+                <p class="cardapio-item-preco">R$ 19,90</p>
+                <input type="button" value="Adicionar ao carrinho!">
+            </div>
+        </div>
+    </section>
+    <section class="sobre">
+        <div class="sobre-conteiner">
+            <h1 class="sobre-conteiner-titulo">Sobre Nós</h1>
+            <p class="sobre-conteiner-texto">Somos uma hamburgueria artesanal que busca oferecer aos nossos clientes a
+                melhor experiência gastronômica possível. Utilizamos apenas ingredientes frescos e de
+                qualidade,preparando cada hambúrguer com muito amor e dedicação. Nossa missão é proporcionar momentos
+                incríveisaos nossos clientes, oferecendo um ambiente acolhedor e um atendimento excepcional. Venha nos
+                visitar e
+                desfrute de um hambúrguer delicioso!</p>
+        </div>
+    </section>
+    <section class="contato">
+        <h1 class="contato-titulo">Entre em Contato</h1>
+        <div class="contato-conteiner">
+            <input type="text" placeholder="Nome">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Mensagem"></textarea>
+            <input type="button" value="Enviar">
+        </div>
+    </section>
+    <footer>
+        <p>Todos os direitos reservados &copy; 2023 Burguer Sabor</p>
+    </footer>
+
+</body>
+
+</html>
