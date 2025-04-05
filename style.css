@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    scroll-behavior: smooth
+}
+body{
+    background-color: #2ce014a8;
+    color: #042200;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    background-color: #042200;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 100;
+    padding: 1.5rem;
+}
+.menu-lista{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1.5rem;
+    
+}
+.menu-link{
+    text-decoration: none;
+    color: #ffffffa8;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: 0.2s;
+}
+.menu-link:hover{
+    color: #66ff00;
+    box-shadow: #ffffff;
+    border-bottom: 2px solid #66ff00;
+}
+.banner{
+ width: 100%;
+ height: 100vh;
+ padding-top: 12vh;
+ margin-bottom: 100px;
+
+
+}
+.banner-conteiner{
+    border: 2px solid #04220000;
+    width: 90%;
+    height: 80vh;
+    background-size: cover;
+    margin: 0 auto;
+    border-radius: 16px;
+    
+
+   
+}
+.banner-imagem{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    z-index: -1;
+    margin-bottom: 100px;
+}
+.filtro{
+    background-color: #042200;
+    width: 100%;
+    height: 10vh;
+    margin: 0 auto;
+    z-index: 100;
+    padding: 1rem;
+}
+.filtro-lista{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1.5rem;
+}
+.filtro-link{
+    text-decoration: none;
+    color: #ffffffa8;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: 0.2s;
+}
+.filtro-link:hover{
+    color: #66ff00;
+    box-shadow: #ffffff;
+    border-bottom: 2px solid #66ff00;
+}
