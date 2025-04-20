@@ -11,16 +11,16 @@
 <body>
     <nav class="menu">
         <ul class="menu-lista">
-            <a href="#banner">
+            <a class="menu_link_lista" href="#banner">
                 <li class="menu-link">inicio</li>
             </a>
-            <a href="#cardapio">
+            <a class="menu_link_lista" href="#cardapio">
                 <li class="menu-link">Cardápio</li>
             </a>
-            <a href="#sobre">
+            <a class="menu_link_lista" href="#sobre">
                 <li class="menu-link">sobre</li>
             </a>
-            <a href="#contato">
+            <a class="menu_link_lista" href="#contato">
                 <li class="menu-link">contato</li>
             </a>
 
@@ -29,52 +29,50 @@
     <section class="banner" id="banner">
         <div class="banner-conteiner">
             <div class="banner-img">
-                <img src="https://img.cdndsgni.com/preview/10024884.jpg" alt="hamburguer"
-                    class="banner-imagem">
+                <img src="https://img.cdndsgni.com/preview/10024884.jpg" alt="hamburguer" class="banner-imagem">
             </div>
         </div>
     </section>
-    <nav class="filtro">
+    <nav class="filtro" id="cardapio">
         <ul class="filtro-lista">
-            <li class="filtro-link" onclick="filtro_humburges()">hamburges</li>
-            <li class="filtro-link" onclick="filtro_bebidas()">bebidas</li>
-            <li class="filtro-link" onclick="filtro_sobremesas()">sobremesas</li>
-            <li class="filtro-link" onclick="filtro_combos()">combos</li>
-            <li class="filtro-link" onclick="filtro_ofertas()">oferta do Dia</li>
+            <li class="filtro-link" onclick="filtrar('hamburguer')">hamburges</li>
+            <li class="filtro-link" onclick="filtrar('bebida')">bebidas</li>
+            <li class="filtro-link" onclick="filtrar('sobremesa')">sobremesas</li>
+            <li class="filtro-link" onclick="filtrar('combo')">combos</li>
+            <li class="filtro-link" onclick="filtrar('oferta')">oferta do Dia</li>
         </ul>
     </nav>
-    <section class="cardapio" id="cardapio">
-        <div class="cardapio-data">cardapio-data</div>
+    <section class="cardapio">
         <h1 class="cardapio-titulo">Cardápio</h1>
-        <div class="cardapio-conteiner">
-            <div class="cardapio-item">
-                <img src="img/hamburguer.jpg" alt=" um delicioso hamburguer">
-                <h2 class="cardapio-item-titulo">Hambúrguer</h2>
-                <p class="cardapio-item-descricao">Delicioso hambúrguer artesanal com queijo, alface, tomate e molho
-                    especial.</p>
-                <p class="cardapio-item-preco">R$ 19,90</p>
-                <input type="button" value="Adicionar ao carrinho!">
-            </div>
-        </div>
+        <div id="lista-produtos"></div>
+        <div class="botaos"><button onclick="limparCarrinho()" class="bottonenviar">Limpar Carrinho</button>
+        <button onclick="enviarPedido()" class="bottonenviar">Finalizar Pedido</button></div>
+
     </section>
     <section class="sobre" id="sobre">
         <div class="sobre-conteiner">
             <h1 class="sobre-conteiner-titulo">Sobre Nós</h1>
+            <div class="thuelement">
             <p class="sobre-conteiner-texto">Somos uma hamburgueria artesanal que busca oferecer aos nossos clientes a
                 melhor experiência gastronômica possível. Utilizamos apenas ingredientes frescos e de
                 qualidade,preparando cada hambúrguer com muito amor e dedicação. Nossa missão é proporcionar momentos
                 incríveisaos nossos clientes, oferecendo um ambiente acolhedor e um atendimento excepcional. Venha nos
                 visitar e
                 desfrute de um hambúrguer delicioso!</p>
+        
+            <img src="https://vejasp.abril.com.br/wp-content/uploads/2019/02/retranca_-pauta_local-cabana-burger-0010.jpg.jpg?quality=70&strip=info" alt="hamburguer" class="sobre-imagem">
+        </div>
         </div>
     </section>
     <section class="contato" id="contato">
-        <h1 class="contato-titulo">Entre em Contato</h1>
         <div class="contato-conteiner">
-            <input type="text" placeholder="Nome">
-            <input type="email" placeholder="Email">
-            <textarea placeholder="Mensagem"></textarea>
-            <input type="button" value="Enviar">
+            <h1 class="contato-titulo">Entre em Contato</h1>
+            <div class="contato-box">
+                <input type="text" placeholder="Nome">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Mensagem"></textarea>
+                <input type="button" value="Enviar">
+            </div>
         </div>
     </section>
     <footer>

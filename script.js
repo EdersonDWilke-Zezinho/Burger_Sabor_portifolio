@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: 6, nome: "Oferta X-Tudo", preco: 20, imagem: "https://media-cdn.tripadvisor.com/media/photo-m/1280/16/85/f2/db/xtudo-duplo.jpg", categoria: "oferta" }
     ];
 
-    let carrinho = [];
+    let carrinho = {};
 
     function filtrar(categoria) {
         const conteiner = document.getElementById("lista-produtos");
@@ -31,30 +31,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function adicionarAoCarrinho(id) {
         const produto = produtos.find(p => p.id === id);
-        carrinho.push(produto);
+        if (!carrinho[id]) {
+            carrinho[id] = { ...produto, quantidade: 1 };
+        } else {
+            carrinho[id].quantidade += 1;
+        }
         alert(`"${produto.nome}" adicionado ao pedido!`);
     }
 
     function enviarPedido() {
-        if (carrinho.length === 0) {
-            alert("Seu carrinho está vazio!");
-            return;
+        const itens = Object.values(carrinho);
+      
+        if (itens.length === 0) {
+          alert("Seu carrinho está vazio!");
+          return;
         }
-
+      
         let mensagem = "Olá! Quero fazer um pedido:%0A%0A";
         let total = 0;
-
-        carrinho.forEach(item => {
-            mensagem += `• ${item.nome} (ID: ${item.id}) - R$ ${item.preco},00%0A`;
-            total += item.preco;
+      
+        itens.forEach(item => {
+          const subtotal = item.preco * item.quantidade;
+          mensagem += `• ${item.nome} (ID: ${item.id}, x${item.quantidade}) - R$ ${subtotal},00%0A`;
+          total += subtotal;
         });
-
+      
         mensagem += `%0ATotal: R$ ${total},00`;
-
+      
         const numeroZap = "5569992787538";
         const linkZap = `https://wa.me/${numeroZap}?text=${mensagem}`;
         window.open(linkZap, "_blank");
-    }
+      }
+      
 
     // Deixa as funções acessíveis no HTML
     window.filtrar = filtrar;
@@ -62,5 +70,23 @@ document.addEventListener("DOMContentLoaded", function () {
     window.enviarPedido = enviarPedido;
 
     // Carrega os produtos ao iniciar
-    filtrar('hamburguer');
+    filtrar('todos');
+
+    function removerDoCarrinho(id) {
+        if (carrinho[id]) {
+            carrinho[id].quantidade -= 1;
+            if (carrinho[id].quantidade <= 0) {
+                delete carrinho[id];
+            }
+            alert(`Item removido do carrinho.`);
+        }
+    }
+
+
 });
+
+function limparCarrinho() {
+    carrinho = {};
+    alert("Carrinho limpo!");
+    filtrar('todos');
+}
