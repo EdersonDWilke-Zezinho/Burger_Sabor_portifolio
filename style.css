@@ -52,16 +52,16 @@ section {
 }
 .banner{
  width: 100%;
- height: 75vh;
+ height: auto;
  padding-top: 12vh;
- margin-bottom: 100px;
+ margin-bottom: 10px;
 
 
 }
 .banner-conteiner{
     border: 2px solid #04220000;
     width: 73%;
-    height: 80vh;
+    height: auto;
     background-size: cover;
     margin: 0 auto;
     border-radius: 16px;
@@ -75,7 +75,7 @@ section {
     object-fit: cover;
     border-radius: 14px;
     z-index: -1;
-    margin-bottom: 100px;
+    margin-bottom: 5px;
 }
 .filtro{
     background-color: #c20000;
@@ -96,7 +96,7 @@ section {
     text-decoration: none;
     color: #ffffff;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1rem;
     transition: 0.2s;
 }
 .filtro-link:hover{
@@ -114,38 +114,44 @@ section {
 }
 .sobre{
     width: 100%;
-    height: 100vh;
-    padding-top: 8vh;
-    margin-bottom: 100px;
+    padding: 6vh 0;
+    margin-bottom: 60px;
+    background-color: #fdff70e7;
+
 }
 .sobre-conteiner{
-    width: 60%;
-    height: 60vh;
+    width: 90%;
+    max-width: 1000px;
     margin: 0 auto;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    border: 2px solid #22000000;
-    border-radius: 16px;
-    background-color: #fdff70e7;
-    padding: 2rem;
-    text-align: justify;
+    display: flex;
     flex-direction: column;
+    gap: 2rem;
 }
-.sobre-imagem{
-    width: auto;
-    height: 35vh;
-    border-radius: 16px;
+.sobre-conteiner-titulo {
+    font-size: 2rem;
+    text-align: center;
 }
-.thuelement{
-    width: 100%;
-    height: 50vh;
+
+.sobre-conteudo {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    padding-bottom: 100px;
-}
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap; /* Faz quebrar no mobile */
+  }
+  
+  .sobre-imagem {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    flex-shrink: 0;
+  }
+  
+  .sobre-texto {
+    flex: 1;
+    font-size: 1rem;
+    text-align: justify;
+  }
 .contato{
     width: 100%;
     height: 50vh;
