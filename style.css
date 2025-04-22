@@ -240,6 +240,14 @@ section {
     border-radius: 5px;
     cursor: pointer;
   }
+  .bottonenviar2{
+    background-color: #c20000;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   .botaos{
     width: 180px;
     display: flex;
@@ -262,6 +270,7 @@ section {
     transition: all 0.3s ease;
     background: #fff;
     margin-top: 10px;
+    
   }
   
   #toggle:checked ~ .janela-flutuante {
@@ -272,4 +281,15 @@ section {
   
   .conteudo {
     padding: 10px;
+    text-align: center;
   }
+  .botao-toggle{
+    background-color: #ffffff;
+    color: #c20000;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+  }
+  
