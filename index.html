@@ -45,28 +45,39 @@
     <section class="cardapio">
         <h1 class="cardapio-titulo">Cardápio</h1>
         <div id="lista-produtos"></div>
-        <div class="botaos"><button onclick="limparCarrinho()" class="bottonenviar">Limpar Carrinho</button>
-            <button onclick="enviarPedido()" class="bottonenviar">Finalizar Pedido</button>
+        <div class="bottonbox">
+            <div class="botaos"><button onclick="limparCarrinho()" class="bottonenviar">Limpar Carrinho</button>
+                <button onclick="enviarPedido()" class="bottonenviar">Finalizar Pedido</button>
+            </div>
         </div>
+        <label for="toggle" class="botao-toggle">Abrir / Fechar Janela</label>
+        <input type="checkbox" id="toggle" hidden>
 
+        <div class="janela-flutuante">
+            <div class="conteudo">
+                <p>Oi, eu sou uma janela flutuante!</p>
+            </div>
+        </div>
     </section>
     <section class="sobre" id="sobre">
         <div class="sobre-conteiner">
-          <h1 class="sobre-conteiner-titulo">Sobre Nós</h1>
-          <div class="sobre-conteudo">
-            <img src="https://vejasp.abril.com.br/wp-content/uploads/2019/02/retranca_-pauta_local-cabana-burger-0010.jpg.jpg?quality=70&strip=info"
-                 alt="hamburguer" class="sobre-imagem">
-            <p class="sobre-texto">
-              Somos uma hamburgueria artesanal que busca oferecer aos nossos clientes
-              a melhor experiência gastronômica possível. Utilizamos apenas ingredientes frescos e de
-              qualidade, preparando cada hambúrguer com muito amor e dedicação. Nossa missão é proporcionar momentos
-              incríveis aos nossos clientes, oferecendo um ambiente acolhedor e um atendimento excepcional. Venha nos
-              visitar e desfrute de um hambúrguer delicioso!
-            </p>
-          </div>
+            <h1 class="sobre-conteiner-titulo">Sobre Nós</h1>
+            <div class="sobre-conteudo">
+                <img src="https://vejasp.abril.com.br/wp-content/uploads/2019/02/retranca_-pauta_local-cabana-burger-0010.jpg.jpg?quality=70&strip=info"
+                    alt="hamburguer" class="sobre-imagem">
+                <p class="sobre-texto">
+                    Somos uma hamburgueria artesanal que busca oferecer aos nossos clientes
+                    a melhor experiência gastronômica possível. Utilizamos apenas ingredientes frescos e de
+                    qualidade, preparando cada hambúrguer com muito amor e dedicação. Nossa missão é proporcionar
+                    momentos
+                    incríveis aos nossos clientes, oferecendo um ambiente acolhedor e um atendimento excepcional. Venha
+                    nos
+                    visitar e desfrute de um hambúrguer delicioso!
+                </p>
+            </div>
         </div>
-      </section>
-      
+    </section>
+
     <section class="contato" id="contato">
         <div class="contato-conteiner">
             <h1 class="contato-titulo">Entre em Contato</h1>
