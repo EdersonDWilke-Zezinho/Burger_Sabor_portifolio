@@ -87,16 +87,17 @@ section {
     scroll-margin-top: 65px;
 }
 .filtro-lista{
+    margin 10px auto;
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 .filtro-link{
     text-decoration: none;
     color: #ffffff;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.8rem;
     transition: 0.2s;
 }
 .filtro-link:hover{
@@ -193,7 +194,7 @@ section {
     background-color: white;
     border-radius: 10px;
     padding: 10px;
-    width: 200px;
+    width: 25%;
     text-align: center;
     box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
     transition: transform 0.2s;
@@ -210,11 +211,13 @@ section {
   }
   
   .produto h3 {
+    width: 100%;
     font-size: 1.1rem;
     margin: 5px 0;
   }
   
   .produto p {
+    width: 100%;
     color: #c20000;
     font-weight: bold;
     margin: 5px 0;
