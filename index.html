@@ -46,20 +46,22 @@
         <h1 class="cardapio-titulo">Cardápio</h1>
         <div id="lista-produtos"></div>
         <div class="bottonbox">
-            <div class="botaos"><button onclick="limparCarrinho()" class="bottonenviar">Limpar Carrinho</button>
-                <button onclick="enviarPedido()" class="bottonenviar">Finalizar Pedido</button>
+            <div class="botaos">
+                <label for="toggle" class="botao-toggle">Finalizar Pedido</label>
+                <input type="checkbox" id="toggle" hidden>
+
+                <div class="janela-flutuante">
+                    <div class="conteudo">
+                        <div id="carrinho"></div>
+                        <button onclick="enviarPedido()" class="bottonenviar2">Finalizar Pedido</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <label for="toggle" class="botao-toggle">Abrir / Fechar Carrinho 🛒</label>
-        <input type="checkbox" id="toggle" hidden>
-
-        <div class="janela-flutuante">
-                <div class="conteudo">
-                    <p>Oi, eu sou uma janela flutuante!</p>
-                    <button onclick="enviarPedido()" class="bottonenviar2">Finalizar Pedido</button>
-                </div>
-        </div>
     </section>
+
+    <div class="botaos"><button onclick="limparCarrinho()" class="bottonenviar">Limpar Carrinho</button></div>
+    
     <section class="sobre" id="sobre">
         <div class="sobre-conteiner">
             <h1 class="sobre-conteiner-titulo">Sobre Nós</h1>
@@ -80,15 +82,25 @@
     </section>
 
     <section class="contato" id="contato">
-        <div class="contato-conteiner">
-            <h1 class="contato-titulo">Entre em Contato</h1>
-            <div class="contato-box">
-                <input type="text" placeholder="Nome">
-                <input type="email" placeholder="Email">
-                <textarea placeholder="Mensagem"></textarea>
-                <input type="button" value="Enviar">
-            </div>
+        <h2 class="contato-titulo">Contato</h2>
+        <div class="contato-conteudo">
+            <form class="formulario-contato" id="formulario-contato" onsubmit="enviarzap(event)">
+                <div class="botao-contorno">
+                    <input type="name" id="nome" placeholder="Nome" class="botao-conteudo" autocomplete="off">
+                </div>
+                <div class="botao-contorno">
+                    <input type="email" id="email" placeholder="E-mail" class="botao-conteudo" autocomplete="off">
+                </div>
+                <div class="botao-contorno">
+                    <textarea id="mensagem" placeholder="Escreva sua Mensagem" class="botao-conteudo"
+                        autocomplete="off"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="botao-enviar">Enviar</button>
+                </div>
+            </form>
         </div>
+
     </section>
     <footer>
         <p>Todos os direitos reservados &copy; 2023 Burguer Sabor</p>

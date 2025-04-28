@@ -37,8 +37,32 @@ document.addEventListener("DOMContentLoaded", function () {
             carrinho[id].quantidade += 1;
         }
         alert(`"${produto.nome}" adicionado ao pedido!`);
+        exibirCarrinho();
     }
-
+    function exibirCarrinho() {
+        const containerCarrinho = document.getElementById('carrinho');
+        containerCarrinho.innerHTML = ""; // Limpa antes de mostrar atualizado
+    
+        const itens = Object.values(carrinho);
+    
+        if (itens.length === 0) {
+            containerCarrinho.innerHTML = "<p>O carrinho está vazio.</p>";
+            return;
+        }
+    
+        itens.forEach(item => {
+            const subtotal = item.preco * item.quantidade;
+            const linha = document.createElement('div');
+            linha.classList.add('item-carrinho');
+    
+            linha.innerHTML = `
+                <p><strong>${item.nome}</strong> (x${item.quantidade}) - R$ ${subtotal},00</p>
+                <button onclick="removerDoCarrinho(${item.id})">Remover</button>
+            `;
+    
+            containerCarrinho.appendChild(linha);
+        });
+    }
     function enviarPedido() {
         const itens = Object.values(carrinho);
       
@@ -89,4 +113,20 @@ function limparCarrinho() {
     carrinho = {};
     alert("Carrinho limpo!");
     filtrar('todos');
+}
+function enviarzap(event) {
+    //event.preventDefaut()
+
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const mensagem = document.getElementById('mensagem').value;
+    const meutelefone = '5569992787538'
+
+    const texto =  `Olá, me chamo ${nome}! O meu e-mail é: ${email} A Minha mensagem de contato é: ${mensagem}`;
+    const msgformatada = encodeURIComponent(texto)
+
+    const url = `https://api.whatsapp.com/send?phone=${meutelefone}&text=${msgformatada}`
+    console.log(texto)
+    console.log(msgformatada)
+    window.open(url, '_blank')
 }

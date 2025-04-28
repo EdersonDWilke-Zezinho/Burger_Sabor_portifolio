@@ -87,7 +87,7 @@ section {
     scroll-margin-top: 65px;
 }
 .filtro-lista{
-    margin 10px auto;
+    margin: 10px auto;
     display: flex;
     justify-content: center;
     list-style: none;
@@ -153,33 +153,63 @@ section {
     font-size: 1rem;
     text-align: justify;
   }
-.contato{
-    width: 100%;
-    height: 50vh;
-    padding-top: 8vh;
-    margin-bottom: 100px;
+  .contato {
+    padding: 6rem 2rem;
 }
-.contato-box{
-    width: 60%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+
+.contato-titulo {
+    text-align: center;
+    margin-bottom: 10px;
 }
-.contato-conteiner{
-    width: 50%;
-    height: 35vh;
+
+.formulario-contato {
+    max-width: 600px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
-    background-color: #fdff70e7;
+    
 }
-.contato-titulo{
-    margin-top: 10px;
+
+.botao-contorno {
+    margin-bottom: 0.1rem;
+    text-align: center;
+}
+
+.botao-conteudo {
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(113, 83, 83, 0.2);
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+.botao-conteudo:focus {
+    border-color: rgba(255, 197, 159, 0.641);
+}
+
+.formulario-contato:hover {
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.319);
+    transform: translateY(-5px) scale(1.04);
+}
+
+.botao-enviar {
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(247, 47, 47, 0.437);
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgba(255, 255, 255, 0.475);
+    outline: none;
+}
+
+.botao-enviar:hover {
+    box-shadow: 2px 2px 8px rgb(255, 205, 39);
+    background: rgba(255, 2, 2, 0.774);
 }
 #lista-produtos {
     display: flex;
@@ -253,6 +283,7 @@ section {
   }
   .botaos{
     width: 180px;
+    height: auto;
     display: flex;
     margin: 0 auto;
     justify-content: center;
@@ -261,7 +292,8 @@ section {
   }
   .bottonbox{
     width: 100%;
-    height: 100px;
+    height: auto;
+    min-height: 80px;
     display: flex;
     margin: 0 auto;
     background-color: #c20000;
@@ -286,13 +318,47 @@ section {
     padding: 10px;
     text-align: center;
   }
-  .botao-toggle{
+.botao-toggle{
     background-color: #ffffff;
     color: #c20000;
     border: none;
     padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
-    align-items: center;
-  }
-  
+    justify-content: center;
+}
+.botao_carrinho{
+  width: 100%;
+  height: 50px;
+}
+#carrinho {
+  margin-top: 20px;
+  padding: 10px;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.item-carrinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item-carrinho p {
+  margin: 0;
+}
+
+.item-carrinho button {
+  background: #c20000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.item-carrinho button:hover {
+  background: #ffae00;
+}
