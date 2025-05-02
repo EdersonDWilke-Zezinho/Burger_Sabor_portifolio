@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
             linha.innerHTML = `
                 <p><strong>${item.nome}</strong> (x${item.quantidade}) - R$ ${subtotal},00</p>
                 <button onclick="removerDoCarrinho(${item.id})">Remover</button>
+                <button onclick="adicionarAoCarrinho(${item.id})">adicionar mais </button>
             `;
     
             containerCarrinho.appendChild(linha);
@@ -86,12 +87,23 @@ document.addEventListener("DOMContentLoaded", function () {
         const linkZap = `https://wa.me/${numeroZap}?text=${mensagem}`;
         window.open(linkZap, "_blank");
       }
-      
+      function removerDoCarrinho(id) {
+        if (carrinho[id]) {
+            carrinho[id].quantidade -= 1;
+            if (carrinho[id].quantidade <= 0) {
+                delete carrinho[id];
+            }
+            alert(`Item removido do carrinho.`);
+        
+        }
+    
+    }
 
     // Deixa as funções acessíveis no HTML
     window.filtrar = filtrar;
     window.adicionarAoCarrinho = adicionarAoCarrinho;
     window.enviarPedido = enviarPedido;
+    window.removerDoCarrinho = removerDoCarrinho;
 
     // Carrega os produtos ao iniciar
     filtrar('todos');
