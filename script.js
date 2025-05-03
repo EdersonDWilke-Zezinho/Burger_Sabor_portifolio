@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
             linha.innerHTML = `
                 <p><strong>${item.nome}</strong> (x${item.quantidade}) - R$ ${subtotal},00</p>
-                <button onclick="removerDoCarrinho(${item.id})">Remover</button>
-                <button onclick="adicionarAoCarrinho(${item.id})">adicionar mais </button>
+                <button onclick="removerDoCarrinho(${item.id})"><strong> -1 </strong></button>
+                <button onclick="adicionarAoCarrinho(${item.id})"><strong> +1 </strong></button>
             `;
     
             containerCarrinho.appendChild(linha);
@@ -115,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 delete carrinho[id];
             }
             alert(`Item removido do carrinho.`);
+            exibirCarrinho(); 
         }
     }
 
