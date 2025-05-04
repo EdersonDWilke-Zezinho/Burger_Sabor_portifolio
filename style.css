@@ -242,7 +242,7 @@ section {
   
   .produto h3 {
     width: 100%;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     margin: 5px 0;
   }
   
@@ -299,8 +299,8 @@ section {
     background-color: #c20000;
   }
   .janela-flutuante {
-    width: 0;
-    height: 0;
+    width: 100%;
+    height: auto;
     overflow: hidden;
     transition: all 0.3s ease;
     background: #fff;

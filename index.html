@@ -47,16 +47,12 @@
         <div id="lista-produtos"></div>
         <div class="bottonbox">
             <div class="botaos">
-                <label for="toggle" class="botao-toggle">Finalizar Pedido</label>
-                <input type="checkbox" id="toggle" hidden>
-
                 <div class="janela-flutuante">
-                    <div class="conteudo">
-                        <div id="carrinho"></div>
-                        <button onclick="enviarPedido()" class="bottonenviar2"><strong>Finalizar Pedido</strong></button>
-                    </div>
+                <input type="checkbox" id="toggle" hidden>
+                <div id="carrinhopedido"></div>
+                <div id="valortotal">O carrinho está vazio.</div>
+                <button onclick="enviarPedido()" class="botao-toggle"><strong>Finalizar Pedido</strong></button>
                 </div>
-                
             </div>
         </div>
     </section>

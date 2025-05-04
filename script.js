@@ -36,34 +36,50 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             carrinho[id].quantidade += 1;
         }
-        alert(`"${produto.nome}" adicionado ao pedido!`);
+        
         exibirCarrinho();
     }
     function exibirCarrinho() {
-        const containerCarrinho = document.getElementById('carrinho');
+        const containerCarrinho = document.getElementById('carrinhopedido');
         containerCarrinho.innerHTML = ""; // Limpa antes de mostrar atualizado
     
         const itens = Object.values(carrinho);
     
         if (itens.length === 0) {
             containerCarrinho.innerHTML = "<p>O carrinho está vazio.</p>";
+            document.getElementById('valortotal').innerHTML = "";
             return;
         }
-    
+        let total = 0;
         itens.forEach(item => {
             const subtotal = item.preco * item.quantidade;
             const linha = document.createElement('div');
             linha.classList.add('item-carrinho');
+            
     
             linha.innerHTML = `
                 <p><strong>${item.nome}</strong> (x${item.quantidade}) - R$ ${subtotal},00</p>
                 <button onclick="removerDoCarrinho(${item.id})"><strong> -1 </strong></button>
                 <button onclick="adicionarAoCarrinho(${item.id})"><strong> +1 </strong></button>
+                
             `;
-    
+            
             containerCarrinho.appendChild(linha);
+          
         });
+        totalDoCarrinho();
     }
+    function totalDoCarrinho(){
+        const itens = Object.values(carrinho);
+        let total = 0;
+        itens.forEach(item => {
+            const subtotal = item.preco * item.quantidade;
+            total += subtotal
+        })
+        const containerTotal = document.getElementById('valortotal');
+    containerTotal.innerHTML = `<p><strong>Valor total do carrinho:</strong> R$ ${total},00</p>`;
+    }
+
     function enviarPedido() {
         const itens = Object.values(carrinho);
       
@@ -93,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (carrinho[id].quantidade <= 0) {
                 delete carrinho[id];
             }
-            alert(`Item removido do carrinho.`);
+            
         
         }
     
@@ -114,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (carrinho[id].quantidade <= 0) {
                 delete carrinho[id];
             }
-            alert(`Item removido do carrinho.`);
+            
             exibirCarrinho(); 
         }
     }
